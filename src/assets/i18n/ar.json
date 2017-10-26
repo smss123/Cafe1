@@ -1,0 +1,40 @@
+{ 
+
+ "LoginForm":{
+  "Login":"دخول",
+  "username":"اسم المستخدم",
+  "password":"كلمة المرور",
+  "register":"تسجيل",
+  "skip":"تخطي"
+ },
+ "arregisterForm":{
+  "username":"اسم المستحدم",
+  "password":"كلمة المرور",
+  "submit":"موافق",
+  "city":"المدينة",
+  "email":"البريد الالكتروني"
+   },
+   "arregisterFormorg":{
+    "username":"اسم المستخدم",
+    "password":"كلمة المرور",
+    "submit":"موافق",
+    "city":"المدينة ",
+    "email":"البريد الالكتروني",
+    "location":"ادخل موقع المنشأة",
+    "website":"ادخل ويب سايت المنشأة",
+    "facebook":"رابط الفيس بوك",
+    "twitter":"رابط تويتر",
+    "instgram":"رابط الانستقرام",
+    "snapchat":"رابط الاسناب شات",
+    "Image":"ادخل صورة",
+    "description":"وصف",
+    "other":"ادخل عن المنشأة",
+    "worktime":"اوقات العمل",
+    "phone":"ارقام التواصل"
+     },
+     "loginasuser":{
+      "userlogin":"الدخول كفرد",
+      "orglogin":"الدخول كمنشأة"
+    } 
+    
+  }

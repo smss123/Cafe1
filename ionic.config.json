@@ -1,5 +1,8 @@
 {
   "name": "Tazzina",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "4012a919",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

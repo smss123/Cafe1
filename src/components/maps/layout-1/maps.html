@@ -1,0 +1,169 @@
+<!--Content -->
+
+
+    <ion-grid no-padding style="width:100%;height:30%">
+        <ion-row>
+          <ion-col col-12>
+          <ion-slides pager>
+          <ion-slide *ngFor="let c of slideImages" [ngStyle]="{'background-image': 'c.img'}" style="max-width:100%;max-height:100%">
+            <img (click)="ShowImg(c)"  [src]="c.img" style="width:100%;height: 100%"/>
+          </ion-slide>
+
+
+
+
+        </ion-slides>
+      </ion-col>
+      </ion-row>
+    </ion-grid >
+    <ion-fab clear transparent  style="margin-top: 20%;background-color:transparent!important" top right edge>
+        <button (click)="Fav()" transparent clear ion-fab mini>
+            <ion-icon color="primary" name="heart"></ion-icon>
+        </button>
+    </ion-fab>
+    <ion-fab clear transparent  style="margin-top: 20%;background-color:transparent!important" top left edge>
+        <button (click)="share()" transparent clear ion-fab mini>
+            <ion-icon color="primary" name="share"></ion-icon>
+        </button>
+    </ion-fab>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-12 map-header>
+
+          <ion-item no-lines transparent>
+            <h1 padding-left maps-title>{{data.title}}</h1>
+            <p padding-left maps-subtitle>{{data.titleDescription}}</p>
+            <!--Parallax Rateing-->
+            <ion-item no-margin padding-left transparent>
+              <ion-icon *ngFor="let item of data.iconsStars;let i = index" (click)="onStarClass(data.iconsStars, i, $event)">
+                <i *ngIf="item.isActive" class="icon {{item.iconActive}}"></i>
+                <i *ngIf="!item.isActive" class="icon {{item.iconInactive}}"></i>
+              </ion-icon>
+              <span>{{data.reviews}}</span>
+            </ion-item>
+          </ion-item>
+        </ion-col>
+
+        <!---Content-->
+        <ion-col col-12 map-content style="color: black!important">
+          <ion-item padding no-lines item-bcg padding-left>
+            <h2  title>{{data.contentTitle}}</h2>
+            <h2 style="color:darkred !important" description text-wrap>{{data.contentDescription}}</h2>
+          </ion-item>
+          </ion-col>
+          <!---Content Info-->
+          <ion-col col-12 map-content>
+              <ion-fab style="position:absolute;top:70%"  right bottom>
+                  <button (click)="GoToNav()" ion-fab color="primary"><ion-icon name="navigate"></ion-icon></button>
+              </ion-fab>
+              <div id="elastic-header">
+
+                  <agm-map [latitude]="data.map.lat" [longitude]="data.map.lng" [zoom]="data.map.zoom" [mapTypeControl]="data.map.mapTypeControl" [streetViewControl]="data.map.streetViewControl">
+                    <agm-marker [latitude]="data.map.lat" [longitude]="data.map.lng"></agm-marker>
+
+                  </agm-map>
+                </div>
+
+                <ion-grid>
+                    <ion-row>
+                    <ion-col col-2>
+                        <ion-item [hidden]="data.website===null||data.website===''" (click)="GoToWebSite(data.website)" no-lines item-bcg transparent padding-left>
+                            <ion-icon item-left icon-small>
+                              <i class="icon {{data.iconEarth}}"></i>
+                            </ion-icon>
+                          </ion-item>
+                    </ion-col>
+
+                      <ion-col col-2>
+                        <ion-item [hidden]="data.snapchat===null||data.snapchat===''" (click)="GoToSnapchat(data.snapchat)" no-lines item-bcg transparent padding-left>
+                          <ion-icon name="logo-snapchat"item-left icon-small>
+                          </ion-icon>
+                        </ion-item>
+                      </ion-col>
+
+                      <ion-col col-2>
+                          <ion-item  [hidden]="data.twitter===null||data.twitter===''" (click)="GoToTwitter(data.twitter)" no-lines item-bcg transparent padding-left>
+                              <ion-icon name="logo-twitter" item-left icon-small>
+                              </ion-icon>
+
+                            </ion-item>
+                      </ion-col>
+
+
+                        <ion-col col-2>
+                            <ion-item [hidden]="data.FaceBookUrl===null||data.FaceBookUrl===''"  (click)="GoToWebSite(data.FaceBookUrl)" no-lines item-bcg transparent padding-left>
+                                <ion-icon item-left icon-small>
+                                    <ion-icon name="logo-facebook"></ion-icon>
+
+                                </ion-icon>
+                            </ion-item>
+                        </ion-col>
+
+                        <ion-col col-2>
+                            <ion-item  [hidden]="data.InstegramUrl===null||data.InstegramUrl===''" (click)="GoToWebSite(data.InstegramUrl)" no-lines item-bcg transparent padding-left>
+                                <ion-icon item-left icon-small>
+                                    <ion-icon name="logo-instagram"></ion-icon>
+
+                                </ion-icon>
+                            </ion-item>
+                        </ion-col>
+
+                        <ion-col col-2>
+                            <ion-item [hidden]="data.phone===null||data.phone===''" (click)="GoToPhoneNumber(data.phone)" no-lines item-bcg transparent padding-left>
+                                <ion-icon item-left icon-small>
+                                    <i class="icon {{data.iconPhone}}"></i>
+                                </ion-icon>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                  </ion-grid>
+
+
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+      <ion-item (click)="slideWorkTime()" >
+        اوقات العمل
+
+      <ion-icon name="{{icon}}"></ion-icon>
+      </ion-item>
+      <ion-item [hidden]="isOpen">
+          <ion-grid>
+              <ion-row *ngFor="let work of data.Workime">
+                <ion-col col-3> {{work.day}}</ion-col>
+                <ion-col col-3>{{work.Time}}</ion-col>
+              </ion-row>
+            </ion-grid>
+      </ion-item>
+    </ion-list>
+
+  <ion-card>
+      <ion-card-header>
+        خدمات اخرى
+      </ion-card-header>
+      <ion-card-content>
+          <div >
+            <ion-grid>
+              <ion-row>
+                <ion-col *ngFor="let c of data.service">
+                    {{c.ServiceName}}
+                    <img  [src]="c.Icon" style="width:20px;height:20px"/>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                    <br>
+                    <br>
+                    <br>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+
+          </div>
+
+      </ion-card-content>
+    </ion-card>
+

@@ -1,0 +1,39 @@
+
+
+ <hr>
+ <ion-grid>
+   <ion-row>
+      <ion-col col-3>
+          <button full ion-button clear >
+              <ion-icon class="changeSize" name="send"></ion-icon>
+          </button>
+       </ion-col>
+     <ion-col col-9>
+        <ion-item>
+
+            <ion-input [(ngModel)]="Comment" type="text"  ></ion-input>
+          </ion-item>
+
+
+     </ion-col>
+
+   </ion-row>
+   <ion-row>
+      <ion-list>
+          <ion-item *ngFor="let c of ListOfComments">
+            <ion-avatar item-start>
+              <img src="./assets/images/avatar/avatar.png">
+            </ion-avatar>
+            <h2>{{c.UserName}}
+              <br>
+              </h2>
+              <small>({{c.TimeOfComment}})</small>
+              <br>
+            <p>{{c.Comment}}</p>
+          </ion-item>
+        </ion-list>
+
+   </ion-row>
+ </ion-grid>
+
+

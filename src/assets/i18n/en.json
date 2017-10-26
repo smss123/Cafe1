@@ -1,0 +1,43 @@
+{ 
+ 
+ "LoginForm":{
+  "Login":"login",
+  "username":"User Name",
+  "password":"password",
+  "register":"register",
+  "skip":"skip"
+ },
+ "arregisterForm":{
+"username":"User Name",
+"password":"password",
+"submit":"submit",
+"city":"city",
+"email":"email"
+ },
+ "arregisterFormorg":{
+  "username":"User Name",
+  "password":"password",
+  "submit":"submit",
+  "city":"city",
+  "email":"email",
+  "location":"location",
+  "website":"Urlwebsite",
+  "facebook":"Urlfacebook",
+  "twitter":"Urltwitter",
+  "instgram":"Urlinstgram",
+  "snapchat":"Urlsnapchat",
+  "Image":"Image",
+  "description":"description",
+  "other":"other",
+  "worktime":"worktime",
+  "phone":"phone"
+   },
+ "loginasuser":{
+   "userlogin":"Login As User",
+   "orglogin":"Login As Orginiztion"
+ } ,
+ "menu":{
+   "ArhomePage":"الرئيسية"
+
+ }
+  }

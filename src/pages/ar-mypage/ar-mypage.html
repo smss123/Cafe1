@@ -1,0 +1,81 @@
+
+<ion-header>
+
+      <ion-navbar style="direction: rtl" >
+          <button ion-button menuToggle >
+              <ion-icon name="menu"></ion-icon>
+            </button>
+        <ion-title>صفحتي</ion-title>
+      </ion-navbar>
+
+    </ion-header>
+
+<ion-content  style="direction: rtl">
+  <!-- Themes Register + Image -->
+<ion-grid>
+    <ion-row wrap padding>
+      <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!--Logo-->
+        <div class="logo" style="width:5em;margin-right:40%;margin-left:50%">
+          <ion-thumbnail>
+              <img src="./assets/images/logo/login.png" alt="">
+          </ion-thumbnail>
+        </div><!--End logo-->
+        <!--Form-->
+        <div class="form">
+          <ion-item no-padding color="accent" style="background-color: #ffffff;">
+            <!--Icon for username-->
+
+            <!---Input field username-->
+            <ion-label  color="primary" floating>اسم المستخدم</ion-label>
+            <ion-input required type="text" [(ngModel)]="username"></ion-input>
+          </ion-item>
+          <ion-item no-padding color="accent" style="background-color: #ffffff;">
+            <!--Icon for password-->
+
+
+            <ion-label color="primary" floating>كلمة المرور</ion-label>
+            <ion-input required type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <ion-item no-padding color="accent" style="background-color: #ffffff;">
+
+            <ion-label color="primary" floating>البريد الالكتروني</ion-label>
+            <ion-input required type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding color="accent" style="background-color: #ffffff;">
+
+
+            <ion-label color="primary" floating>المدينة</ion-label>
+            <ion-select [(ngModel)]="city"  [compareWith]="compareFn" okText="موافق"
+            cancelText="الغاء">
+            <ion-option value="0" selected disabled>--يرجى اختيار المدينة--</ion-option>
+            <ion-option *ngFor="let c of CityList" [value]="c.Id">المدينة</ion-option>
+
+          </ion-select>
+
+          </ion-item>
+<br>
+
+          <button ion-button right (click)="onEvent('onRegister')">تعديل</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-buttons>
+                <button (click)="back()" ion-button>
+
+                    <ion-icon name="arrow-back"></ion-icon>
+                    رجوع
+                </button>
+            </ion-buttons>
+            <ion-title>
+
+            </ion-title>
+        </ion-toolbar>
+    </ion-footer>

@@ -1,0 +1,71 @@
+<!-- Themes Login + logo -->
+<ion-grid>
+  <ion-row wrap padding >
+    <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <button ion-button button-clear clear (click)="onEvent('onSkip')">{{data.skip}}</button>
+      <!---Logo-->
+      <ion-thumbnail>
+        <img [src]="data.logo">
+      </ion-thumbnail>
+      <!---Input field username-->
+      <ion-item no-padding color="accent" style="background-color: #ffffff;">
+        <ion-label style="color:blue"  floating>{{data.username}}</ion-label>
+        <ion-input required type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <!---Input field password-->
+      <ion-item no-padding color="accent" style="background-color: #ffffff;">
+        <ion-label color="secondary" floating>{{data.password}}</ion-label>
+        <ion-input required type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <!---Login button-->
+      <button ion-button right default-button (click)="onEvent('onLogin')">{{data.login}}</button>
+      <!---Register button-->
+      <button ion-button right default-button (click)="onEvent('onRegister')">{{data.register}}</button>
+    </ion-col>
+
+    <ion-grid>
+<!--
+  <ion-row social>
+     <ion-col col-3 col-sm-3 col-md-3>
+        <!---Facebook button--
+        <button ion-button color="facebook" clear (click)="onEvent('onFacebook')">
+
+              <ion-icon style="font-size:250%" name="logo-facebook"></ion-icon>
+
+      </button>
+      </ion-col>
+
+      <ion-col col-3 col-sm-3 col-md-3>
+
+        <!---Twitter button--
+        <button ion-button color="twitter" clear (click)="onEvent('onTwitter')">
+        <ion-icon style="font-size:250%" name="logo-twitter"></ion-icon>
+
+      </button>
+      </ion-col>
+
+      <ion-col col-3 col-sm-3 col-md-3>
+        <!---Google button
+        <button ion-button color="google" clear (click)="onEvent('onGoogle')">
+         <ion-icon style="font-size:250%" name="logo-google"></ion-icon>
+
+      </button>
+      </ion-col>
+ <ion-col col-3 col-sm-3 col-md-3>
+         <!---Pinterest button
+      <button ion-button color="pinterest" clear (click)="onEvent('onPinterest')">
+         <ion-icon style="font-size:250%" name="logo-instagram"></ion-icon>
+
+      </button>
+      </ion-col>
+
+
+
+    <!---End Share Section
+  </ion-row> -->
+</ion-grid>
+    <!-- -Share Section
+    <ion-col col-12 social>
+      -->
+  </ion-row>
+</ion-grid>
